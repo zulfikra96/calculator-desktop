@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style lang="css">
+        .container{
+            width:100%;
+        }
+        .output-display{
+            width: 100%;
+            height: 20px;
+        }
+        .button-number{
+            padding:20px;
+        }
+        .input{
+            margin-top:12px;
+            display: inline-block;
+        }
+        .input .function-main, .input .number-main{
+            display: inline-block;
+        }
+        .number-main{
+            float:left;
+            /*background-color: red;*/
+        }
+        .function-main{
+            float: left;
+            margin-left:10px;
+            /*background-color: red;*/
+        }
+        .number-sub{
+            margin-bottom: 10px;
+        }
+        .button-function{
+            width:45px;
+            padding-bottom: 37.5px;
+            padding-top: 37.5px;
+        }
+        .clear button{
+            width:100%;
+            padding:20
+        }
+    </style>
+</head>
+<body>
+    <!--display-->
+    <div class="container">
+        <!--output-->
+        <div class="output">
+            <input type="text" class="output-display" disabled id="output" value="0">
+        </div>
+        <div class="input">
+            <div class="number-main">
+                <div class="number-sub">
+                    <button type="button" id="_7" class="button-number">7</button>
+                    <button type="button" id="_8" class="button-number">8</button>
+                    <button type="button" id="_9" class="button-number">9</button>
+                </div>
+                <div class="number-sub">
+                    <button type="button" id="_4" class="button-number">4</button>
+                    <button type="button" id="_5" class="button-number">5</button>
+                    <button type="button" id="_6" class="button-number">6</button>
+                </div>
+                <div class="number-sub">
+                    <button type="button" id="_1" class="button-number">1</button>
+                    <button type="button" id="_2" class="button-number">2</button>
+                    <button type="button" id="_3" class="button-number">3</button>
+                </div>
+                <div class="number-sub">
+                    <button type="button" id="_0" class="button-number">0</button>
+                    <button type="button" id="_00" class="button-number" style="width:65.6%">00</button>
+                </div>
+            </div>
+            <div class="function-main">
+                <div class="number-sub">
+                    <button type="button" class="button-function" id="_+">+</button>
+                    <button type="button" class="button-function" id="_=">=</button>
+                </div>
+                <div class="number-sub">
+                    <button type="button" class="button-function" id="_:">:</button>
+                    <button type="button" class="button-function" id="_x" >x</button>
+                </div>
+                <div class="number-sub">
+                    <button type="button" class="button-number" id="clear" style="width:100%">C</button>                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        require('./main.js')
+    </script>
+</body>
+</html>
