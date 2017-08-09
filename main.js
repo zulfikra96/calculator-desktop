@@ -12,137 +12,145 @@ const _7 = document.getElementById('_7')
 const _8 = document.getElementById('_8')
 const _9 = document.getElementById('_9')
 
-const _0 = document.getElementById('_0')
-const _00 = document.getElementById('_00')
-const _000 = document.getElementById('_000')
+const _0    = document.getElementById('_0')
+const _00   = document.getElementById('_00')
+const _000  = document.getElementById('_000')
 
-const _plus = document.getElementById('_+')
-const _qual = document.getElementById('_=')
+const _plus     = document.getElementById('_+')
+const _equal    = document.getElementById('_=')
 
-const _clear = document.getElementById('clear')
-
-
+const _clear    = document.getElementById('clear')
 
 const output_text = document.getElementById('output')
 
-
-let number = 0
-let number_to_String = ''
-let number_bool = false;
-let array_number = 0
-let number_equal
-let array_equal = []
-
+// variable
+let value           = ""
+let displayed       = ""
+let first_value     = 0
+let second_value    = 0
+let operations = ""
+let operations_bool = false
+let equal_value = 0
 
 _1.addEventListener('click', function(){
-    number = 1
-    number_to_String += number.toString()
-    output_text.value = number_to_String
-    console.log(number_bool)
+    value       = "1"
+    displayed   += value
+    displayedNumber(displayed)
+    operations_bool = false
 })
+
 _2.addEventListener('click', function(){
-    number = 2
-    number_to_String += number.toString()
-    output_text.value = number_to_String
-    console.log(number_bool)
+    value       = "2"
+    displayed   += value
+    displayedNumber(displayed)
+    operations_bool = false
     
 })
+
 _3.addEventListener('click', function(){
-    number = 3
-    number_to_String += number.toString()
-    output_text.value = number_to_String
-    console.log(number_bool)
-    
+    value       = "3"
+    displayed   += value
+    displayedNumber(displayed)
+    operations_bool = false
 })
+
 _4.addEventListener('click', function(){
-    number = 4
-    number_to_String += number.toString()
-    output_text.value = number_to_String
-    console.log(number_bool)
-    
+    value       = "4"
+    displayed   += value
+    displayedNumber(displayed)
+    operations_bool = false
 })
+
 _5.addEventListener('click', function(){
-    number = 5
-    number_to_String += number.toString()
-    output_text.value = number_to_String
-    console.log(number_bool)
-    
+    value       = "5"
+    displayed   += value
+    displayedNumber(displayed)
+    operations_bool = false
 })
+
 _6.addEventListener('click', function(){
-    number = 6
-    number_to_String += number.toString()
-    output_text.value = number_to_String
-    console.log(number_bool)
+    value       = "6"
+    displayed   += value
+    displayedNumber(displayed)
+    operations_bool = false
     
 })
+
 _7.addEventListener('click', function(){
-    number = 7
-    number_to_String += number.toString()
-    output_text.value = number_to_String
-    console.log(number_bool)
+    value       = "7"
+    displayed   += value
+    displayedNumber(displayed)
+    operations_bool = false
     
 })
+
 _8.addEventListener('click', function(){
-    number = 8
-    number_to_String += number.toString()
-    output_text.value = number_to_String
-    console.log(number_bool)
+    value       = "8"
+    displayed   += value
+    displayedNumber(displayed)
+    operations_bool = false
     
 })
+
 _9.addEventListener('click', function(){
-    number = 9
-    number_to_String += number.toString()
-    output_text.value = number_to_String
-    console.log(number_bool)
+    value       = "9"
+    displayed   += value
+    displayedNumber(displayed)
+    operations_bool = false
     
+})
+
+_0.addEventListener('click', function(){
+    value       = "0"
+    displayed   += value
+    displayedNumber(displayed)
+    operations_bool = false
+    
+})
+
+_00.addEventListener('click', function(){
+    value       = "00"
+    displayed   += value
+    displayedNumber(displayed)
+    operations_bool = false
+    
+})
+
+_plus.addEventListener('click', function(){
+    add()
+})
+
+_equal.addEventListener('click', function(){
+    equal()
 })
 
 // functional
 
-_plus.addEventListener('click', function(){
-     
-    plus()
-       
-})
+function add(){
+    first_value = parseInt(output_text.value)
+    operations = "add"
+    operations_bool = true
+    displayed = "" 
+}
 
-_qual.addEventListener('click',function(){
-    output_text.value = number_equal
-    checkNumber()
+
+function displayedNumber(number){
+    output_text.value = number   
+}
+
+function equal(){
+    switch (operations) {
+        case "add":
+            second_value = parseInt(output_text.value)
+            equal_number = first_value + second_value
+            displayedNumber(equal_number)
+            console.log("berhasil")
+            break;
     
-})
-
-_clear.addEventListener('click', function(){
-    __clear()
-})
-
-// functinal
-
-function checkNumber(){
-    if(number_bool == true){
-        number_to_String = ''
+        default:
+            break;
     }
 }
-
-function __clear(){
-
-    number_to_String , output_text.value = "0"
-    console.log("clear")
-
-}
-
-// function plus(){
-//     let string_to_number = parseInt(number_to_String)
-//     array_equal.push(string_to_number)
-//     number_bool = true;
-//     for(let key in array_equal){
-//         number_equal = array_equal[key] += array_equal[key]
-//     }
-//     checkNumber()
-// }
-
-
-
-
 
 
 
