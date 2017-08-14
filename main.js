@@ -16,12 +16,15 @@ const _0    = document.getElementById('_0')
 const _00   = document.getElementById('_00')
 const _000  = document.getElementById('_000')
 
-const _plus     = document.getElementById('_+')
-const _equal    = document.getElementById('_=')
+const _plus         = document.getElementById('_+')
+const _times         = document.getElementById('_x')
+const _reduce       = document.getElementById('_-')
+const _equal        = document.getElementById('_=')
+const _devided        = document.getElementById('_:')
 
-const _clear    = document.getElementById('clear')
+const _clear        = document.getElementById('clear')
 
-const output_text = document.getElementById('output')
+const output_text   = document.getElementById('output')
 
 // variable
 let value           = ""
@@ -120,8 +123,25 @@ _plus.addEventListener('click', function(){
     add()
 })
 
+_reduce.addEventListener('click', function(){
+    reduce()
+})
+
 _equal.addEventListener('click', function(){
     equal()
+})
+
+_times.addEventListener('click', function(){
+    times()
+})
+
+_devided.addEventListener('click', function(){
+    devided()
+})
+
+_clear.addEventListener('click', function(){
+    displayed = ""
+    output_text.value = "0"
 })
 
 // functional
@@ -129,6 +149,27 @@ _equal.addEventListener('click', function(){
 function add(){
     first_value = parseInt(output_text.value)
     operations = "add"
+    operations_bool = true
+    displayed = "" 
+}
+
+function reduce(){
+    first_value = parseInt(output_text.value)
+    operations = "reduce"
+    operations_bool = true
+    displayed = "" 
+}
+
+function times(){
+    first_value = parseInt(output_text.value)
+    operations = "times"
+    operations_bool = true
+    displayed = "" 
+}
+
+function devided(){
+    first_value = parseInt(output_text.value)
+    operations = "devided"
     operations_bool = true
     displayed = "" 
 }
@@ -144,12 +185,42 @@ function equal(){
             second_value = parseInt(output_text.value)
             equal_number = first_value + second_value
             displayedNumber(equal_number)
-            console.log("berhasil")
+            console.log("berhasil menjumlahkan")
+            operations_bool = true
+            displayed = ""
             break;
+        case "reduce":
+            second_value = parseInt(output_text.value)
+            equal_number = first_value - second_value
+            displayedNumber(equal_number)
+            console.log("berhasil mengurangi")
+            operations_bool = true
+            displayed = ""
+            break
+        case "times":
+            second_value = parseInt(output_text.value)
+            equal_number = first_value * second_value
+            displayedNumber(equal_number)
+            console.log("berhasil mengkalikan")
+            operations_bool = true
+            displayed = ""
+            break
+        case "devided":
+            second_value = parseInt(output_text.value)
+            equal_number = first_value / second_value
+            displayedNumber(equal_number)
+            console.log("berhasil mengkalikan")
+            operations_bool = true
+            displayed = ""
+            break
     
         default:
             break;
     }
+}
+
+function clearDisplay(){
+    
 }
 
 
